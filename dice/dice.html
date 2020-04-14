@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dice game</title>
+    <style>
+        p{
+            font-size: 50px;
+        }
+        img{
+            width:12%;
+            height:12%;
+        } 
+        #pic{
+            width:27%;
+            height:27%;
+        }
+        p{
+            font-size: 25px;
+    font-family: Comic Sans MS;
+        }
+        button{
+            background-color: green;
+    border: none;
+    color: white;
+    width: 95px;
+    height: 36px;
+    border-radius: 10px;
+        }
+    </style>
+</head>
+<body style="background-color:#ffff00a8">
+    <center>
+        <img src="img/dicee.png" id="pic" /><br>
+<p>Player 1&nbsp;&nbsp; Player2</p>
+    <img src="img/dice1.png" id="pic1"/>&nbsp;&nbsp;
+    <img src="img/dice1.png" id="pic2"/><br>
+    <P id="t1"></P>
+    <!--<button type="button" class="btn btn-success" onclick="change()">Roll</button>-->
+
+    <button onclick="change()">Roll</button>
+</center>
+</body>
+<script>
+
+
+    function change(){
+        var picc = new Array("img/dice1.png","img/dice2.png","img/dice3.png","img/dice4.png","img/dice5.png","img/dice6.png");
+
+        var player1= Math.floor(Math.random() * 6);
+         document.getElementById("pic1").src = picc[player1];
+         var player2= Math.floor(Math.random() * 6);
+         document.getElementById("pic2").src = picc[player2];
+
+
+    if(player1>player2)
+         {
+             //document.write("Player1 Wins").innerHTML;
+            // console.log("Player1 wins");
+            document.getElementById("t1").innerHTML = "Player1 Wins";
+
+           
+         }
+         else if(player1==player2){
+            document.getElementById("t1").innerHTML = "Draw";
+         
+
+         }
+         else
+         {
+            document.getElementById("t1").innerHTML = "Player2 Wins";
+           
+         } 
+   
+    }
+</script>
+</html>
